@@ -16,8 +16,10 @@ def find_file(root_folder, rex):
                 # remove AssettoCorsa.exe from the string, build correct folder structure
                 carsPath = (path[:-16]) + assettocorsaPath
                 print("Found assettocorsa file location: " + carsPath)
+                print()
                 # copy the skin
                 print("Installing Skins...")
+                print()
                 copy_tree(filesToCopy, carsPath)
                 break
 
@@ -30,12 +32,16 @@ print()
 run = input("Install AC Skins? y/n: ")
 if run == "y" or run == "Y":
     try:
+        print()
         print("Finding assettocorsa directory and installing skins...")
         find_file_in_all_drives('AssettoCorsa\.exe')
         print("Skin Install Complete...")
+        print()
         input("Press Enter to exit...")
     except:
+        print()
         print("Could not find assettocorsa file location...")
+        print()
         input("Press Enter to exit...")
 else:
     sys.exit(0)
